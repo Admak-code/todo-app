@@ -5,6 +5,8 @@ import InfoModal from "./components/InfoModal";
 import "./App.css";
 
 function App() {
+  const isUnderMaintenance = true;
+
   const [inputValue, setInputValue] = useState("");
   const [items, setItem] = useState([]);
   const [isCompleted, setCompleted] = useState({});
@@ -44,12 +46,25 @@ function App() {
     setItem(updatedItems);
   };
 
+  if (isUnderMaintenance) {
+    return (
+      <div className="h-screen flex flex-col items-center justify-center text-center p-4 bg-gray-100">
+        <h1 className="text-3xl font-bold text-red-600">
+          🚧 Site Under Maintenance 🚧
+        </h1>
+        <p className="text-gray-700 mt-2">
+          We’re making some improvements. Please check back later!
+        </p>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="containers">
         {showModal && <InfoModal onClose={() => setShowModal(false)} />}
         <h1 id="todotitle" className="text-3xl font-medium font-mono">
-          Todo List
+          Todo App
         </h1>
         <div className="input-section">
           <input
