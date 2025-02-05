@@ -3,7 +3,7 @@ import React from "react";
 function InfoModal({ onClose }) {
   return (
     <div
-      className="fixed inset-0 flex items-center justify-centerbackdrop-blur-sm"
+      className="fixed inset-0 flex items-center justify-center backdrop-blur-md"
       style={{ background: "rgba(0,0,0,.5)" }}
     >
       <div className="bg-white p-8 rounded-2xl shadow-2xl w-11/12 max-w-md text-center transform transition-all scale-100 hover:scale-105">
